@@ -47,7 +47,7 @@ public class RollPickerProcedure {
 			if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 1) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							("/tellraw @a {\"text\":\" \\u0020" + "" + entity.getDisplayName().getString() + " Has become a Robot \",\"color\":\"gray\"}"));
+							("/tellraw @a {\"text\":\" " + "" + entity.getDisplayName().getString() + " Has become a Robot \uD83E\uDD16\",\"color\":\"gray\"}"));
 			}
 			if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 2) {
 				if (world instanceof ServerLevel _level)
@@ -57,7 +57,7 @@ public class RollPickerProcedure {
 			if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 3) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							("/tellraw @a {\"text\":\" " + "" + entity.getDisplayName().getString() + " Has become a King \",\"color\":\"dark_purple\"}"));
+							("/tellraw @a {\"text\":\" " + "" + entity.getDisplayName().getString() + " Has become a King \u265B \",\"color\":\"dark_purple\"}"));
 			}
 			if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 4) {
 				if (world instanceof ServerLevel _level)
