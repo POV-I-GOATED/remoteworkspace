@@ -67,6 +67,7 @@ public class StellarModVariables {
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			clone.Role = original.Role;
+			clone.Should_Hook = original.Should_Hook;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -104,6 +105,7 @@ public class StellarModVariables {
 
 	public static class PlayerVariables {
 		public double Role = 0;
+		public boolean Should_Hook = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -113,12 +115,14 @@ public class StellarModVariables {
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putDouble("Role", Role);
+			nbt.putBoolean("Should_Hook", Should_Hook);
 			return nbt;
 		}
 
 		public void readNBT(Tag Tag) {
 			CompoundTag nbt = (CompoundTag) Tag;
 			Role = nbt.getDouble("Role");
+			Should_Hook = nbt.getBoolean("Should_Hook");
 		}
 	}
 
@@ -144,6 +148,7 @@ public class StellarModVariables {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.Role = message.data.Role;
+					variables.Should_Hook = message.data.Should_Hook;
 				}
 			});
 			context.setPacketHandled(true);

@@ -3,12 +3,135 @@
     {
       "name": "RollPicker",
       "type": "procedure",
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "roll_picker",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/stellar/procedures/RollPickerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hook",
+      "type": "animatedentity",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hook",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/client/renderer/HookRenderer.java",
+          "src/main/java/net/mcreator/stellar/entity/model/HookModel.java",
+          "src/main/java/net/mcreator/stellar/entity/HookEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "Hooks",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hooks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/item/HooksItem.java",
+          "src/main/resources/assets/stellar/models/item/hooks.json"
+        ]
+      }
+    },
+    {
+      "name": "HookKeeper",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hook_keeper",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/HookKeeperProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RightClick",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_click",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/RightClickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HookOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hook_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/HookOnInitialEntitySpawnProcedure.java"
         ],
         "dependencies": [
           {
@@ -41,15 +164,30 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "Should_Hook",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "entity.stellar.hook": "Hook",
+      "item.stellar.hooks": "Hooks",
+      "item.stellar.hook_spawn_egg": "Hook Spawn Egg"
+    }
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Pirate",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "stellar",
@@ -63,8 +201,11 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [],
+    "mcreatorDependencies": [
+      "geckolib"
+    ],
     "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.stellar",
     "lockBaseModFiles": false
   },

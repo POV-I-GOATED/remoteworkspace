@@ -1,0 +1,7 @@
+{
+  "parent": "stellar:custom/pirate_hookw",
+  "textures": {
+    "1": "stellar:block/pris",
+    "particle": "stellar:item/sda"
+  }
+}

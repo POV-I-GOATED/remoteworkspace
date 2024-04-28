@@ -1,1 +1,5 @@
-{}
+{
+  "entity.stellar.hook": "Hook",
+  "item.stellar.hooks": "Hooks",
+  "item.stellar.hook_spawn_egg": "Hook Spawn Egg"
+}
