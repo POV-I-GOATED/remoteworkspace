@@ -1,25 +1,51 @@
 {
   "mod_elements": [
     {
-      "name": "Cool",
-      "type": "item",
+      "name": "RollPicker",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "cool",
+      "registry_name": "roll_picker",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/stellar/item/CoolItem.java",
-          "src/main/resources/assets/stellar/models/item/cool.json"
+          "src/main/java/net/mcreator/stellar/procedures/RollPickerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "Role",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
   "sound_elements": [],
   "language_map": {
-    "en_us": {
-      "item.stellar.cool": "Cool"
-    }
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
