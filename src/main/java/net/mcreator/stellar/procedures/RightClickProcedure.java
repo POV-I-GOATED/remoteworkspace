@@ -1,6 +1,7 @@
 package net.mcreator.stellar.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.MobSpawnType;
@@ -29,7 +30,11 @@ public class RightClickProcedure {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = StellarModEntities.HOOK.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
-						entityToSpawn.setDeltaMovement(0, 0, 0);
+						entityToSpawn.setDeltaMovement(
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(50)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getX() - x),
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(50)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getY() - y),
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(50)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()
+										- z));
 					}
 				}
 			}
