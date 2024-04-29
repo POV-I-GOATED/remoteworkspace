@@ -24,6 +24,7 @@ public class StellarModTabs {
 
 		if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
 			tabData.accept(StellarModItems.HOOKS.get());
+			tabData.accept(StellarModItems.REROLLER.get());
 		}
 	}
 }

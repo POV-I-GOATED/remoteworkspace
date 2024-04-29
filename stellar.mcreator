@@ -156,6 +156,39 @@
           }
         ]
       }
+    },
+    {
+      "name": "RerollerRightclicked",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reroller_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/RerollerRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reroller",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reroller",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/item/RerollerItem.java",
+          "src/main/resources/assets/stellar/models/item/reroller.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -176,6 +209,7 @@
   "language_map": {
     "en_us": {
       "entity.stellar.hook": "Hook",
+      "item.stellar.reroller": "Reroller",
       "item.stellar.hooks": "Hooks",
       "item.stellar.hook_spawn_egg": "Hook Spawn Egg"
     }

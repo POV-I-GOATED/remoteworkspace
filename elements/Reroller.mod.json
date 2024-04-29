@@ -2,13 +2,13 @@
   "_fv": 57,
   "_type": "item",
   "definition": {
-    "renderType": 1,
-    "texture": "gem_txt",
-    "customModelName": "pirate_hookw:default",
+    "renderType": 0,
+    "texture": "real",
+    "customModelName": "Normal",
     "customProperties": {},
     "states": [],
-    "name": "Hooks",
-    "rarity": "COMMON",
+    "name": "Reroller",
+    "rarity": "EPIC",
     "creativeTab": {
       "value": "COMBAT"
     },
@@ -36,7 +36,7 @@
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "onRightClickedInAir": {
-      "name": "RightClick"
+      "name": "RerollerRightclicked"
     },
     "enableRanged": false,
     "shootConstantly": false,
