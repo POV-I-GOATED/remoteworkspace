@@ -45,8 +45,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/stellar/client/renderer/HookRenderer.java",
-          "src/main/java/net/mcreator/stellar/entity/model/HookModel.java",
-          "src/main/java/net/mcreator/stellar/entity/HookEntity.java"
+          "src/main/java/net/mcreator/stellar/entity/HookEntity.java",
+          "src/main/java/net/mcreator/stellar/entity/model/HookModel.java"
         ]
       }
     },
