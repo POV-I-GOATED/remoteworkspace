@@ -189,6 +189,40 @@
           "src/main/resources/assets/stellar/models/item/reroller.json"
         ]
       }
+    },
+    {
+      "name": "Stelllar",
+      "type": "tab",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stelllar",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "HookPlayerCollidesWithThisEntity",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hook_player_collides_with_this_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/HookPlayerCollidesWithThisEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -210,6 +244,7 @@
     "en_us": {
       "entity.stellar.hook": "Hook",
       "item.stellar.reroller": "Reroller",
+      "item_group.stellar.stelllar": "Stellar",
       "item.stellar.hooks": "Hooks",
       "item.stellar.hook_spawn_egg": "Hook Spawn Egg"
     }

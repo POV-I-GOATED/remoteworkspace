@@ -34,17 +34,21 @@ public class HookKeeperProcedure {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 2) {
-			if (entity instanceof Player _player) {
-				ItemStack _stktoremove = new ItemStack(StellarModItems.HOOKS.get());
-				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
+			if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Should_Hook) {
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(StellarModItems.HOOKS.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(StellarModItems.HOOKS.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
 			}
-			if (entity instanceof LivingEntity _entity) {
-				ItemStack _setstack = new ItemStack(StellarModItems.HOOKS.get());
-				_setstack.setCount(1);
-				_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
-				if (_entity instanceof Player _player)
-					_player.getInventory().setChanged();
-			}
+		}
+		if (!((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 2)) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == StellarModItems.HOOKS.get()) {
 				if (entity instanceof LivingEntity _entity) {
 					ItemStack _setstack = new ItemStack(Blocks.AIR);

@@ -1,6 +1,7 @@
 {
   "entity.stellar.hook": "Hook",
   "item.stellar.reroller": "Reroller",
+  "item_group.stellar.stelllar": "Stellar",
   "item.stellar.hooks": "Hooks",
   "item.stellar.hook_spawn_egg": "Hook Spawn Egg"
 }
