@@ -100,6 +100,9 @@
     "stepSound": {
       "value": ""
     },
+    "onPlayerCollidesWith": {
+      "name": "HookPlayerCollidesWithThisEntity"
+    },
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"></block></xml>",

@@ -41,6 +41,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.stellar.procedures.HookPlayerCollidesWithThisEntityProcedure;
 import net.mcreator.stellar.init.StellarModEntities;
 
 public class HookEntity extends PathfinderMob implements GeoEntity {
@@ -169,6 +170,12 @@ public class HookEntity extends PathfinderMob implements GeoEntity {
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);
+	}
+
+	@Override
+	public void playerTouch(Player sourceentity) {
+		super.playerTouch(sourceentity);
+		HookPlayerCollidesWithThisEntityProcedure.execute(this.level(), sourceentity);
 	}
 
 	@Override

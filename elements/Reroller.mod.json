@@ -10,7 +10,7 @@
     "name": "Reroller",
     "rarity": "EPIC",
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:Stelllar"
     },
     "stackSize": 1,
     "enchantability": 0,
