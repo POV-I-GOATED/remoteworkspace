@@ -1,7 +1,7 @@
 {
-  "parent": "stellar:custom/pirate_hookw",
+  "parent": "stellar:custom/hook_-_converted",
   "textures": {
-    "1": "stellar:block/pris",
+    "0": "stellar:block/hook2",
     "particle": "stellar:item/gem_txt"
   }
 }

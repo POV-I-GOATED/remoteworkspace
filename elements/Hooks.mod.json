@@ -4,7 +4,7 @@
   "definition": {
     "renderType": 1,
     "texture": "gem_txt",
-    "customModelName": "pirate_hookw:default",
+    "customModelName": "hook_-_converted:default",
     "customProperties": {},
     "states": [],
     "name": "Hooks",

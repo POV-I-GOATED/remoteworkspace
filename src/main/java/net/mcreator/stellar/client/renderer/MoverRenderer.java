@@ -9,25 +9,25 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
-import net.mcreator.stellar.entity.model.HookModel;
-import net.mcreator.stellar.entity.HookEntity;
+import net.mcreator.stellar.entity.model.MoverModel;
+import net.mcreator.stellar.entity.MoverEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class HookRenderer extends GeoEntityRenderer<HookEntity> {
-	public HookRenderer(EntityRendererProvider.Context renderManager) {
-		super(renderManager, new HookModel());
+public class MoverRenderer extends GeoEntityRenderer<MoverEntity> {
+	public MoverRenderer(EntityRendererProvider.Context renderManager) {
+		super(renderManager, new MoverModel());
 		this.shadowRadius = 0.5f;
 	}
 
 	@Override
-	public RenderType getRenderType(HookEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+	public RenderType getRenderType(MoverEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 
 	@Override
-	public void preRender(PoseStack poseStack, HookEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
+	public void preRender(PoseStack poseStack, MoverEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
 			float blue, float alpha) {
 		float scale = 1f;
 		this.scaleHeight = scale;

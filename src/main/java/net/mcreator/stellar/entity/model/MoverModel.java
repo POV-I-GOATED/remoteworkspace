@@ -4,21 +4,21 @@ import software.bernie.geckolib.model.GeoModel;
 
 import net.minecraft.resources.ResourceLocation;
 
-import net.mcreator.stellar.entity.HookEntity;
+import net.mcreator.stellar.entity.MoverEntity;
 
-public class HookModel extends GeoModel<HookEntity> {
+public class MoverModel extends GeoModel<MoverEntity> {
 	@Override
-	public ResourceLocation getAnimationResource(HookEntity entity) {
+	public ResourceLocation getAnimationResource(MoverEntity entity) {
 		return new ResourceLocation("stellar", "animations/priste.animation.json");
 	}
 
 	@Override
-	public ResourceLocation getModelResource(HookEntity entity) {
+	public ResourceLocation getModelResource(MoverEntity entity) {
 		return new ResourceLocation("stellar", "geo/priste.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureResource(HookEntity entity) {
+	public ResourceLocation getTextureResource(MoverEntity entity) {
 		return new ResourceLocation("stellar", "textures/entities/" + entity.getTexture() + ".png");
 	}
 

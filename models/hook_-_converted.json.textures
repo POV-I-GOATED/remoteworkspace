@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": ""
+        "0": "hook2"
       },
       "name": "default"
     }

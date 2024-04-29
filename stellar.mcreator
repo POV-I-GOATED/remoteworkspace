@@ -36,21 +36,6 @@
       }
     },
     {
-      "name": "Hook",
-      "type": "animatedentity",
-      "sortid": 1,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hook",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/stellar/client/renderer/HookRenderer.java",
-          "src/main/java/net/mcreator/stellar/entity/HookEntity.java",
-          "src/main/java/net/mcreator/stellar/entity/model/HookModel.java"
-        ]
-      }
-    },
-    {
       "name": "Hooks",
       "type": "item",
       "sortid": 3,
@@ -102,22 +87,6 @@
           {
             "name": "itemstack",
             "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -209,9 +178,6 @@
       "locked_code": false,
       "registry_name": "hook_player_collides_with_this_entity",
       "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/stellar/procedures/HookPlayerCollidesWithThisEntityProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "sourceentity",
@@ -220,6 +186,124 @@
           {
             "name": "world",
             "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Realhook",
+      "type": "projectile",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "realhook",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/entity/RealhookEntity.java",
+          "src/main/java/net/mcreator/stellar/client/renderer/RealhookRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "Mover",
+      "type": "animatedentity",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mover",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/entity/MoverEntity.java",
+          "src/main/java/net/mcreator/stellar/entity/model/MoverModel.java",
+          "src/main/java/net/mcreator/stellar/client/renderer/MoverRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "MoverOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mover_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/MoverOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RealhookProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "realhook_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/RealhookProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RealhookWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "realhook_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/RealhookWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }
@@ -242,11 +326,11 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "entity.stellar.hook": "Hook",
+      "entity.stellar.mover": "Mover",
       "item.stellar.reroller": "Reroller",
       "item_group.stellar.stelllar": "Stellar",
       "item.stellar.hooks": "Hooks",
-      "item.stellar.hook_spawn_egg": "Hook Spawn Egg"
+      "item.stellar.mover_spawn_egg": "Mover Spawn Egg"
     }
   },
   "foldersRoot": {

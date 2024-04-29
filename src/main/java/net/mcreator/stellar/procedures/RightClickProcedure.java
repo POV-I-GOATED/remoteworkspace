@@ -1,19 +1,18 @@
 package net.mcreator.stellar.procedures;
 
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.stellar.network.StellarModVariables;
 import net.mcreator.stellar.init.StellarModEntities;
+import net.mcreator.stellar.entity.RealhookEntity;
 
 public class RightClickProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		if (!(entity instanceof Player _plrCldCheck1 && _plrCldCheck1.getCooldowns().isOnCooldown(itemstack.getItem()))) {
@@ -27,14 +26,23 @@ public class RightClickProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = StellarModEntities.HOOK.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setDeltaMovement(
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(50)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getX() - x),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(50)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getY() - y),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(50)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()
-										- z));
+				{
+					Entity _shootFrom = entity;
+					Level projectileLevel = _shootFrom.level();
+					if (!projectileLevel.isClientSide()) {
+						Projectile _entityToSpawn = new Object() {
+							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+								AbstractArrow entityToSpawn = new RealhookEntity(StellarModEntities.REALHOOK.get(), level);
+								entityToSpawn.setOwner(shooter);
+								entityToSpawn.setBaseDamage(damage);
+								entityToSpawn.setKnockback(knockback);
+								entityToSpawn.setSilent(true);
+								return entityToSpawn;
+							}
+						}.getArrow(projectileLevel, entity, 10, 1);
+						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 5, 0);
+						projectileLevel.addFreshEntity(_entityToSpawn);
 					}
 				}
 			}

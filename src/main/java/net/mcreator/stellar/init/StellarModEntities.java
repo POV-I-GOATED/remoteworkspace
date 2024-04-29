@@ -16,14 +16,17 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
-import net.mcreator.stellar.entity.HookEntity;
+import net.mcreator.stellar.entity.RealhookEntity;
+import net.mcreator.stellar.entity.MoverEntity;
 import net.mcreator.stellar.StellarMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class StellarModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, StellarMod.MODID);
-	public static final RegistryObject<EntityType<HookEntity>> HOOK = register("hook",
-			EntityType.Builder.<HookEntity>of(HookEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HookEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RealhookEntity>> REALHOOK = register("projectile_realhook",
+			EntityType.Builder.<RealhookEntity>of(RealhookEntity::new, MobCategory.MISC).setCustomClientFactory(RealhookEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<MoverEntity>> MOVER = register("mover",
+			EntityType.Builder.<MoverEntity>of(MoverEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoverEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -32,12 +35,12 @@ public class StellarModEntities {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			HookEntity.init();
+			MoverEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
-		event.put(HOOK.get(), HookEntity.createAttributes().build());
+		event.put(MOVER.get(), MoverEntity.createAttributes().build());
 	}
 }
