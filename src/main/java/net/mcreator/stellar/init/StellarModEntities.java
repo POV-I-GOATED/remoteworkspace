@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.stellar.entity.RealhookEntity;
+import net.mcreator.stellar.entity.MoverssEntity;
 import net.mcreator.stellar.entity.MoverEntity;
 import net.mcreator.stellar.StellarMod;
 
@@ -27,6 +28,8 @@ public class StellarModEntities {
 			EntityType.Builder.<RealhookEntity>of(RealhookEntity::new, MobCategory.MISC).setCustomClientFactory(RealhookEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<MoverEntity>> MOVER = register("mover",
 			EntityType.Builder.<MoverEntity>of(MoverEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoverEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MoverssEntity>> MOVERSS = register("moverss",
+			EntityType.Builder.<MoverssEntity>of(MoverssEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoverssEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -36,11 +39,13 @@ public class StellarModEntities {
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			MoverEntity.init();
+			MoverssEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(MOVER.get(), MoverEntity.createAttributes().build());
+		event.put(MOVERSS.get(), MoverssEntity.createAttributes().build());
 	}
 }

@@ -87,6 +87,22 @@
           {
             "name": "itemstack",
             "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -307,6 +323,87 @@
           }
         ]
       }
+    },
+    {
+      "name": "Moverss",
+      "type": "animatedentity",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moverss",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/entity/MoverssEntity.java",
+          "src/main/java/net/mcreator/stellar/entity/model/MoverssModel.java",
+          "src/main/java/net/mcreator/stellar/client/renderer/MoverssRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "RealhookProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "realhook_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/RealhookProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MoverssOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moverss_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/MoverssOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -326,10 +423,12 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "entity.stellar.moverss": "Mover",
       "entity.stellar.mover": "Mover",
       "item.stellar.reroller": "Reroller",
       "item_group.stellar.stelllar": "Stellar",
       "item.stellar.hooks": "Hooks",
+      "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
       "item.stellar.mover_spawn_egg": "Mover Spawn Egg"
     }
   },

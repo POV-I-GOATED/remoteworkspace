@@ -17,6 +17,9 @@
     "customModelTexture": "hook.png",
     "onHitsBlock": {
       "name": "RealhookProjectileHitsBlock"
+    },
+    "onHitsEntity": {
+      "name": "RealhookProjectileHitsLivingEntity"
     }
   }
 }

@@ -1,7 +1,9 @@
 {
+  "entity.stellar.moverss": "Mover",
   "entity.stellar.mover": "Mover",
   "item.stellar.reroller": "Reroller",
   "item_group.stellar.stelllar": "Stellar",
   "item.stellar.hooks": "Hooks",
+  "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
   "item.stellar.mover_spawn_egg": "Mover Spawn Egg"
 }
