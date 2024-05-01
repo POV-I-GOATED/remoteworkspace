@@ -19,6 +19,7 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.stellar.entity.RealhookEntity;
 import net.mcreator.stellar.entity.MoverssEntity;
 import net.mcreator.stellar.entity.MoverEntity;
+import net.mcreator.stellar.entity.KniteEntity;
 import net.mcreator.stellar.StellarMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -30,6 +31,10 @@ public class StellarModEntities {
 			EntityType.Builder.<MoverEntity>of(MoverEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoverEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MoverssEntity>> MOVERSS = register("moverss",
 			EntityType.Builder.<MoverssEntity>of(MoverssEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoverssEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<KniteEntity>> KNITE = register("knite",
+			EntityType.Builder.<KniteEntity>of(KniteEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KniteEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -40,6 +45,7 @@ public class StellarModEntities {
 		event.enqueueWork(() -> {
 			MoverEntity.init();
 			MoverssEntity.init();
+			KniteEntity.init();
 		});
 	}
 
@@ -47,5 +53,6 @@ public class StellarModEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(MOVER.get(), MoverEntity.createAttributes().build());
 		event.put(MOVERSS.get(), MoverssEntity.createAttributes().build());
+		event.put(KNITE.get(), KniteEntity.createAttributes().build());
 	}
 }

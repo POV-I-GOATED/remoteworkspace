@@ -16,8 +16,8 @@ import net.mcreator.stellar.StellarMod;
 import java.util.Comparator;
 
 public class RealhookProjectileHitsLivingEntityProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity, Entity sourceentity) {
-		if (entity == null || immediatesourceentity == null || sourceentity == null)
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity) {
+		if (entity == null || immediatesourceentity == null)
 			return;
 		Entity me = null;
 		if (world instanceof ServerLevel _level) {
@@ -48,16 +48,6 @@ public class RealhookProjectileHitsLivingEntityProcedure {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
 				}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().putDouble("mystartz", ((immediatesourceentity.getPersistentData().getDouble("startZ") - z) / 20));
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal((entity.getDisplayName().getString())), false);
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal((sourceentity.getDisplayName().getString())), false);
-				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal((((Entity) world.getEntitiesOfClass(MoverssEntity.class, AABB.ofSize(new Vec3(x, y, z), 10, 10, 10), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getDisplayName().getString())), false);
 				StellarMod.queueServerWork(20, () -> {
 					if (!world.getEntitiesOfClass(MoverssEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty()) {
 						if (!((Entity) world.getEntitiesOfClass(MoverssEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).stream().sorted(new Object() {

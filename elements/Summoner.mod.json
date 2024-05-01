@@ -2,17 +2,17 @@
   "_fv": 57,
   "_type": "item",
   "definition": {
-    "renderType": 1,
-    "texture": "gem_txt",
-    "customModelName": "hook_-_converted:default",
+    "renderType": 0,
+    "texture": "resummon",
+    "customModelName": "Normal",
     "customProperties": {},
     "states": [],
-    "name": "Hooks",
-    "rarity": "COMMON",
+    "name": "Summoner",
+    "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "CUSTOM:Stelllar"
     },
-    "stackSize": 1,
+    "stackSize": 4,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -35,10 +35,13 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "SummonerRightclicked"
+    },
     "enableRanged": false,
     "shootConstantly": false,
     "projectile": {
-      "value": "Arrow"
+      "value": "CUSTOM:Realhook"
     },
     "isFood": false,
     "nutritionalValue": 4,

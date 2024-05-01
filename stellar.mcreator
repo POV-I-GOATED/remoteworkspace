@@ -85,10 +85,6 @@
             "type": "entity"
           },
           {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -360,10 +356,6 @@
             "type": "entity"
           },
           {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -404,6 +396,85 @@
           }
         ]
       }
+    },
+    {
+      "name": "RClick",
+      "type": "keybind",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "r_click",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/network/RClickMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "Knite",
+      "type": "animatedentity",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "knite",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/forge/biome_modifier/knite_biome_modifier.json",
+          "src/main/java/net/mcreator/stellar/entity/KniteEntity.java",
+          "src/main/java/net/mcreator/stellar/client/renderer/KniteRenderer.java",
+          "src/main/java/net/mcreator/stellar/entity/model/KniteModel.java",
+          "src/main/resources/assets/stellar/models/item/knite_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "Summoner",
+      "type": "item",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "summoner",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/item/SummonerItem.java",
+          "src/main/resources/assets/stellar/models/item/summoner.json"
+        ]
+      }
+    },
+    {
+      "name": "SummonerRightclicked",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "summoner_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/SummonerRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -425,11 +496,15 @@
     "en_us": {
       "entity.stellar.moverss": "Mover",
       "entity.stellar.mover": "Mover",
+      "item.stellar.summoner": "Summoner",
       "item.stellar.reroller": "Reroller",
+      "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
       "item_group.stellar.stelllar": "Stellar",
       "item.stellar.hooks": "Hooks",
       "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
-      "item.stellar.mover_spawn_egg": "Mover Spawn Egg"
+      "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
+      "key.stellar.r_click": "R Click",
+      "entity.stellar.knite": "Knight"
     }
   },
   "foldersRoot": {

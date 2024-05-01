@@ -20,8 +20,6 @@ public class RealhookProjectileHitsBlockProcedure {
 		if (entity == null)
 			return;
 		Entity Movers = null;
-		if (!world.isClientSide() && world.getServer() != null)
-			world.getServer().getPlayerList().broadcastSystemMessage(Component.literal((entity.getDisplayName().getString())), false);
 		if (world instanceof ServerLevel _level) {
 			Entity entityToSpawn = StellarModEntities.MOVER.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
 			if (entityToSpawn != null) {

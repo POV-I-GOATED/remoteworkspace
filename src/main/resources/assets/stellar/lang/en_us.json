@@ -1,9 +1,13 @@
 {
   "entity.stellar.moverss": "Mover",
   "entity.stellar.mover": "Mover",
+  "item.stellar.summoner": "Summoner",
   "item.stellar.reroller": "Reroller",
+  "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
   "item_group.stellar.stelllar": "Stellar",
   "item.stellar.hooks": "Hooks",
   "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
-  "item.stellar.mover_spawn_egg": "Mover Spawn Egg"
+  "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
+  "key.stellar.r_click": "R Click",
+  "entity.stellar.knite": "Knight"
 }
