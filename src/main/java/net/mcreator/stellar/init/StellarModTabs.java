@@ -26,6 +26,9 @@ public class StellarModTabs {
 				tabData.accept(StellarModItems.HOOKS.get());
 				tabData.accept(StellarModItems.REROLLER.get());
 				tabData.accept(StellarModItems.SUMMONER.get());
+				tabData.accept(StellarModBlocks.URANIUM_BLOCK.get().asItem());
+				tabData.accept(StellarModBlocks.URANIUM_ORE.get().asItem());
+				tabData.accept(StellarModItems.URANIUM.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent

@@ -475,6 +475,178 @@
           }
         ]
       }
+    },
+    {
+      "name": "KniteOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "knite_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/KniteOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Uranium",
+      "type": "item",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/item/UraniumItem.java",
+          "src/main/resources/assets/stellar/models/item/uranium.json"
+        ]
+      }
+    },
+    {
+      "name": "UraniumOre",
+      "type": "block",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_ore",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/worldgen/configured_feature/uranium_ore.json",
+          "src/main/resources/assets/stellar/blockstates/uranium_ore.json",
+          "src/main/java/net/mcreator/stellar/block/UraniumOreBlock.java",
+          "src/main/resources/data/stellar/forge/biome_modifier/uranium_ore_biome_modifier.json",
+          "src/main/resources/assets/stellar/models/item/uranium_ore.json",
+          "src/main/resources/data/stellar/worldgen/placed_feature/uranium_ore.json",
+          "src/main/resources/assets/stellar/models/block/uranium_ore.json"
+        ]
+      }
+    },
+    {
+      "name": "UraniumBlock",
+      "type": "block",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/stellar/models/block/uranium_block.json",
+          "src/main/java/net/mcreator/stellar/block/UraniumBlockBlock.java",
+          "src/main/resources/assets/stellar/blockstates/uranium_block.json",
+          "src/main/resources/assets/stellar/models/item/uranium_block.json"
+        ]
+      }
+    },
+    {
+      "name": "UraniumOreBlockRecipe",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_ore_block_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/uranium_ore_block_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "UraniumBlockOreRecipe",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_block_ore_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/uranium_block_ore_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "UraniumOreSmelting",
+      "type": "recipe",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_ore_smelting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/uranium_ore_smelting.json"
+        ]
+      }
+    },
+    {
+      "name": "Radation",
+      "type": "potioneffect",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radation",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/potion/RadationMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "RadationOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radation_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/RadationOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadationPosion",
+      "type": "damagetype",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radation_posion",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/damage_type/radation_posion.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -496,15 +668,22 @@
     "en_us": {
       "entity.stellar.moverss": "Mover",
       "entity.stellar.mover": "Mover",
-      "item.stellar.summoner": "Summoner",
       "item.stellar.reroller": "Reroller",
-      "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
-      "item_group.stellar.stelllar": "Stellar",
+      "effect.stellar.radation": "Radation",
+      "item.stellar.uranium": "Uranium",
       "item.stellar.hooks": "Hooks",
       "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
       "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
       "key.stellar.r_click": "R Click",
-      "entity.stellar.knite": "Knight"
+      "entity.stellar.knite": "Knight",
+      "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
+      "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",
+      "death.attack.radation_posion": "%1$s died by radation posion",
+      "item.stellar.summoner": "Summoner",
+      "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
+      "block.stellar.uranium_block": "Block of Uranium",
+      "item_group.stellar.stelllar": "Stellar",
+      "block.stellar.uranium_ore": "Uranium Ore"
     }
   },
   "foldersRoot": {

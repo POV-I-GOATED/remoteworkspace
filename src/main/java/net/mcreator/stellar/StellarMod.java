@@ -30,8 +30,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.stellar.init.StellarModTabs;
+import net.mcreator.stellar.init.StellarModMobEffects;
 import net.mcreator.stellar.init.StellarModItems;
 import net.mcreator.stellar.init.StellarModEntities;
+import net.mcreator.stellar.init.StellarModBlocks;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -51,10 +53,14 @@ public class StellarMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		StellarModBlocks.REGISTRY.register(bus);
+
 		StellarModItems.REGISTRY.register(bus);
 		StellarModEntities.REGISTRY.register(bus);
 
 		StellarModTabs.REGISTRY.register(bus);
+
+		StellarModMobEffects.REGISTRY.register(bus);
 
 	}
 

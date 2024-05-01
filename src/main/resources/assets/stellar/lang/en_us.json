@@ -1,13 +1,20 @@
 {
   "entity.stellar.moverss": "Mover",
   "entity.stellar.mover": "Mover",
-  "item.stellar.summoner": "Summoner",
   "item.stellar.reroller": "Reroller",
-  "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
-  "item_group.stellar.stelllar": "Stellar",
+  "effect.stellar.radation": "Radation",
+  "item.stellar.uranium": "Uranium",
   "item.stellar.hooks": "Hooks",
   "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
   "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
   "key.stellar.r_click": "R Click",
-  "entity.stellar.knite": "Knight"
+  "entity.stellar.knite": "Knight",
+  "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
+  "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",
+  "death.attack.radation_posion": "%1$s died by radation posion",
+  "item.stellar.summoner": "Summoner",
+  "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
+  "block.stellar.uranium_block": "Block of Uranium",
+  "item_group.stellar.stelllar": "Stellar",
+  "block.stellar.uranium_ore": "Uranium Ore"
 }

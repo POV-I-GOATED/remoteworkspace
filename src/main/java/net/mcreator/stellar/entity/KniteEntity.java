@@ -52,6 +52,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.stellar.procedures.KniteOnEntityTickUpdateProcedure;
 import net.mcreator.stellar.init.StellarModEntities;
 
 import java.util.List;
@@ -192,6 +193,7 @@ public class KniteEntity extends TamableAnimal implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		KniteOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 

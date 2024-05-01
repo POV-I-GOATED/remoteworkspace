@@ -9,8 +9,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 
+import net.mcreator.stellar.item.UraniumItem;
 import net.mcreator.stellar.item.SummonerItem;
 import net.mcreator.stellar.item.RerollerItem;
 import net.mcreator.stellar.item.HooksItem;
@@ -22,4 +25,11 @@ public class StellarModItems {
 	public static final RegistryObject<Item> REROLLER = REGISTRY.register("reroller", () -> new RerollerItem());
 	public static final RegistryObject<Item> KNITE_SPAWN_EGG = REGISTRY.register("knite_spawn_egg", () -> new ForgeSpawnEggItem(StellarModEntities.KNITE, -256, -26368, new Item.Properties()));
 	public static final RegistryObject<Item> SUMMONER = REGISTRY.register("summoner", () -> new SummonerItem());
+	public static final RegistryObject<Item> URANIUM_BLOCK = block(StellarModBlocks.URANIUM_BLOCK);
+	public static final RegistryObject<Item> URANIUM_ORE = block(StellarModBlocks.URANIUM_ORE);
+	public static final RegistryObject<Item> URANIUM = REGISTRY.register("uranium", () -> new UraniumItem());
+
+	private static RegistryObject<Item> block(RegistryObject<Block> block) {
+		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
 }

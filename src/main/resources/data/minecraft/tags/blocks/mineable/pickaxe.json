@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "stellar:uranium_block",
+    "stellar:uranium_ore"
+  ]
+}
