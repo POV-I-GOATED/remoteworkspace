@@ -64,6 +64,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -647,6 +663,53 @@
           "src/main/resources/data/stellar/damage_type/radation_posion.json"
         ]
       }
+    },
+    {
+      "name": "UraniumOreEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_ore_entity_collides_in_the_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/UraniumOreEntityCollidesInTheBlockProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "UraniumOreEntityCollidesInTheBlocks",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_ore_entity_collides_in_the_blocks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/UraniumOreEntityCollidesInTheBlocksProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UranumSword",
+      "type": "tool",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranum_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/stellar/models/item/uranum_sword.json",
+          "src/main/java/net/mcreator/stellar/item/UranumSwordItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -675,6 +738,7 @@
       "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
       "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
       "key.stellar.r_click": "R Click",
+      "item.stellar.uranum_sword": "Uranum Sword",
       "entity.stellar.knite": "Knight",
       "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
       "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",

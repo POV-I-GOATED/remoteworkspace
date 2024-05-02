@@ -119,6 +119,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onEntityCollides": {
+      "name": "UraniumOreEntityCollidesInTheBlocks"
+    },
     "generateFeature": true,
     "restrictionBiomes": [
       {
@@ -128,6 +131,9 @@
     "blocksToReplace": [
       {
         "value": "TAG:stone_ore_replaceables"
+      },
+      {
+        "value": "Blocks.DEEPSLATE"
       }
     ],
     "generationShape": "UNIFORM",

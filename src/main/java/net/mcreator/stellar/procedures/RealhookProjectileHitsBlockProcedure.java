@@ -48,7 +48,7 @@ public class RealhookProjectileHitsBlockProcedure {
 					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("FAIL"), false);
 			}
 		});
-		StellarMod.queueServerWork(20, () -> {
+		StellarMod.queueServerWork(24, () -> {
 			if (!world.getEntitiesOfClass(MoverEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty()) {
 				if (!((Entity) world.getEntitiesOfClass(MoverEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 100, 100, 100), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {

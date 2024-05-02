@@ -12,6 +12,20 @@
         "state": {
           "Name": "stellar:uranium_ore"
         }
+      },
+      {
+        "target": {
+          "predicate_type": "blockstate_match",
+          "block_state": {
+            "Name": "minecraft:deepslate",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        "state": {
+          "Name": "stellar:uranium_ore"
+        }
       }
     ]
   }

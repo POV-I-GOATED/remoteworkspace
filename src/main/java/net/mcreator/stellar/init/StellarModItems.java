@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import net.mcreator.stellar.item.UranumSwordItem;
 import net.mcreator.stellar.item.UraniumItem;
 import net.mcreator.stellar.item.SummonerItem;
 import net.mcreator.stellar.item.RerollerItem;
@@ -28,6 +29,7 @@ public class StellarModItems {
 	public static final RegistryObject<Item> URANIUM_BLOCK = block(StellarModBlocks.URANIUM_BLOCK);
 	public static final RegistryObject<Item> URANIUM_ORE = block(StellarModBlocks.URANIUM_ORE);
 	public static final RegistryObject<Item> URANIUM = REGISTRY.register("uranium", () -> new UraniumItem());
+	public static final RegistryObject<Item> URANUM_SWORD = REGISTRY.register("uranum_sword", () -> new UranumSwordItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
