@@ -848,9 +848,9 @@
       "registry_name": "choser",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/stellar/network/ChoserButtonMessage.java",
           "src/main/java/net/mcreator/stellar/world/inventory/ChoserMenu.java",
-          "src/main/java/net/mcreator/stellar/client/gui/ChoserScreen.java"
+          "src/main/java/net/mcreator/stellar/client/gui/ChoserScreen.java",
+          "src/main/java/net/mcreator/stellar/network/ChoserButtonMessage.java"
         ]
       }
     },

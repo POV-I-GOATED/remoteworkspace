@@ -89,7 +89,7 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 				StellarMod.PACKET_HANDLER.sendToServer(new ChoserButtonMessage(0, x, y, z));
 				ChoserButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 3, this.topPos + 15, 51, 20).build();
+		}).bounds(this.leftPos + 21, this.topPos + 15, 51, 20).build();
 		guistate.put("button:button_speed", button_speed);
 		this.addRenderableWidget(button_speed);
 		button_strength = Button.builder(Component.translatable("gui.stellar.choser.button_strength"), e -> {
@@ -97,7 +97,7 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 				StellarMod.PACKET_HANDLER.sendToServer(new ChoserButtonMessage(1, x, y, z));
 				ChoserButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}).bounds(this.leftPos + 104, this.topPos + 14, 67, 20).build();
+		}).bounds(this.leftPos + 87, this.topPos + 15, 67, 20).build();
 		guistate.put("button:button_strength", button_strength);
 		this.addRenderableWidget(button_strength);
 	}
