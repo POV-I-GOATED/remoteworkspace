@@ -52,7 +52,7 @@ public class LasershortyerMessage {
 			return;
 		if (type == 0) {
 
-			LasershortyerOnKeyPressedProcedure.execute(entity);
+			LasershortyerOnKeyPressedProcedure.execute(world, entity);
 		}
 	}
 
