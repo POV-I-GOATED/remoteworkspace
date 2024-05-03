@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import net.mcreator.stellar.network.RClickMessage;
+import net.mcreator.stellar.network.LasershortyerMessage;
 import net.mcreator.stellar.StellarMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
@@ -33,10 +34,24 @@ public class StellarModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping LASERSHORTYER = new KeyMapping("key.stellar.lasershortyer", GLFW.GLFW_KEY_R, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				StellarMod.PACKET_HANDLER.sendToServer(new LasershortyerMessage(0, 0));
+				LasershortyerMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(R_CLICK);
+		event.register(LASERSHORTYER);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -45,6 +60,7 @@ public class StellarModKeyMappings {
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				R_CLICK.consumeClick();
+				LASERSHORTYER.consumeClick();
 			}
 		}
 	}

@@ -18,6 +18,7 @@ import net.mcreator.stellar.item.UraniumItem;
 import net.mcreator.stellar.item.SummonerItem;
 import net.mcreator.stellar.item.RerollerItem;
 import net.mcreator.stellar.item.HooksItem;
+import net.mcreator.stellar.item.CrownItem;
 import net.mcreator.stellar.StellarMod;
 
 public class StellarModItems {
@@ -30,6 +31,7 @@ public class StellarModItems {
 	public static final RegistryObject<Item> URANIUM_ORE = block(StellarModBlocks.URANIUM_ORE);
 	public static final RegistryObject<Item> URANIUM = REGISTRY.register("uranium", () -> new UraniumItem());
 	public static final RegistryObject<Item> URANUM_SWORD = REGISTRY.register("uranum_sword", () -> new UranumSwordItem());
+	public static final RegistryObject<Item> CROWN_HELMET = REGISTRY.register("crown_helmet", () -> new CrownItem.Helmet());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

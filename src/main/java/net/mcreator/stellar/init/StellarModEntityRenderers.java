@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.mcreator.stellar.client.renderer.RealhookRenderer;
 import net.mcreator.stellar.client.renderer.MoverssRenderer;
 import net.mcreator.stellar.client.renderer.MoverRenderer;
+import net.mcreator.stellar.client.renderer.LaserRenderer;
 import net.mcreator.stellar.client.renderer.KniteRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -22,5 +23,6 @@ public class StellarModEntityRenderers {
 		event.registerEntityRenderer(StellarModEntities.MOVER.get(), MoverRenderer::new);
 		event.registerEntityRenderer(StellarModEntities.MOVERSS.get(), MoverssRenderer::new);
 		event.registerEntityRenderer(StellarModEntities.KNITE.get(), KniteRenderer::new);
+		event.registerEntityRenderer(StellarModEntities.LASER.get(), LaserRenderer::new);
 	}
 }

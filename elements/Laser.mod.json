@@ -1,0 +1,19 @@
+{
+  "_fv": 57,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Items.REDSTONE"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 3.0,
+    "damage": 15.0,
+    "knockback": 5,
+    "entityModel": "Modelgo",
+    "customModelTexture": "laser.png"
+  }
+}

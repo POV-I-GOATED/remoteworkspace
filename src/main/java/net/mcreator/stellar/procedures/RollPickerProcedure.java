@@ -38,7 +38,7 @@ public class RollPickerProcedure {
 			return;
 		if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 0) {
 			{
-				double _setval = Calendar.getInstance().get(Calendar.SECOND) % 4 + 1;
+				double _setval = Calendar.getInstance().get(Calendar.SECOND) % 5 + 1;
 				entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Role = _setval;
 					capability.syncPlayerVariables(entity);
@@ -63,6 +63,11 @@ public class RollPickerProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							("/tellraw @a {\"text\":\" " + "" + entity.getDisplayName().getString() + " Has become a Mutant \\u2622 \",\"color\":\"green\"}"));
+			}
+			if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 5) {
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							("/tellraw @a {\"text\":\" " + "" + entity.getDisplayName().getString() + " Has become a Boxer \uD83E\uDD4A\",\"color\":\"red\"}"));
 			}
 		}
 	}

@@ -12,10 +12,12 @@
   "entity.stellar.knite": "Knight",
   "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
   "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",
+  "item.stellar.crown_helmet": "Crown Helmet",
   "death.attack.radation_posion": "%1$s died by radation posion",
   "item.stellar.summoner": "Summoner",
   "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
   "block.stellar.uranium_block": "Block of Uranium",
   "item_group.stellar.stelllar": "Stellar",
+  "key.stellar.lasershortyer": "R Click",
   "block.stellar.uranium_ore": "Uranium Ore"
 }

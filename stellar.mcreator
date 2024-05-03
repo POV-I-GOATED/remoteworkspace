@@ -710,6 +710,134 @@
           "src/main/java/net/mcreator/stellar/item/UranumSwordItem.java"
         ]
       }
+    },
+    {
+      "name": "Ur",
+      "type": "recipe",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ur",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/ur.json"
+        ]
+      }
+    },
+    {
+      "name": "ER",
+      "type": "recipe",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "er",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/er.json"
+        ]
+      }
+    },
+    {
+      "name": "Laser",
+      "type": "projectile",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laser",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/entity/LaserEntity.java",
+          "src/main/java/net/mcreator/stellar/client/renderer/LaserRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "Lasershortyer",
+      "type": "keybind",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lasershortyer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/network/LasershortyerMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "LasershortyerOnKeyPressed",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lasershortyer_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/LasershortyerOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Crown",
+      "type": "armor",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/item/CrownItem.java",
+          "src/main/resources/assets/stellar/models/item/crown_helmet.json"
+        ]
+      }
+    },
+    {
+      "name": "Disablitys",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disablitys",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/DisablitysProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Attack",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/AttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -724,6 +852,24 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "damage",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "StrongLuck",
+      "type": "number",
+      "scope": "map",
+      "value": "0.0"
+    },
+    {
+      "name": "ChanceLuck",
+      "type": "number",
+      "scope": "map",
+      "value": "2.0"
     }
   ],
   "sound_elements": [],
@@ -742,11 +888,13 @@
       "entity.stellar.knite": "Knight",
       "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
       "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",
+      "item.stellar.crown_helmet": "Crown Helmet",
       "death.attack.radation_posion": "%1$s died by radation posion",
       "item.stellar.summoner": "Summoner",
       "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
       "block.stellar.uranium_block": "Block of Uranium",
       "item_group.stellar.stelllar": "Stellar",
+      "key.stellar.lasershortyer": "R Click",
       "block.stellar.uranium_ore": "Uranium Ore"
     }
   },

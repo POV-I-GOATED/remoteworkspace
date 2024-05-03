@@ -15,9 +15,14 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.Tag;
@@ -33,6 +38,7 @@ import java.util.function.Supplier;
 public class StellarModVariables {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
+		StellarMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handler);
 		StellarMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
 	}
 
@@ -68,8 +74,145 @@ public class StellarModVariables {
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			clone.Role = original.Role;
 			clone.Should_Hook = original.Should_Hook;
+			clone.damage = original.damage;
 			if (!event.isWasDeath()) {
 			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData mapdata = MapVariables.get(event.getEntity().level());
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (mapdata != null)
+					StellarMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(0, mapdata));
+				if (worlddata != null)
+					StellarMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (worlddata != null)
+					StellarMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+	}
+
+	public static class WorldVariables extends SavedData {
+		public static final String DATA_NAME = "stellar_worldvars";
+
+		public static WorldVariables load(CompoundTag tag) {
+			WorldVariables data = new WorldVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level level && !level.isClientSide())
+				StellarMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(level::dimension), new SavedDataSyncMessage(1, this));
+		}
+
+		static WorldVariables clientSide = new WorldVariables();
+
+		public static WorldVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevel level) {
+				return level.getDataStorage().computeIfAbsent(e -> WorldVariables.load(e), WorldVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class MapVariables extends SavedData {
+		public static final String DATA_NAME = "stellar_mapvars";
+		public double StrongLuck = 0.0;
+		public double ChanceLuck = 2.0;
+
+		public static MapVariables load(CompoundTag tag) {
+			MapVariables data = new MapVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+			StrongLuck = nbt.getDouble("StrongLuck");
+			ChanceLuck = nbt.getDouble("ChanceLuck");
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			nbt.putDouble("StrongLuck", StrongLuck);
+			nbt.putDouble("ChanceLuck", ChanceLuck);
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level && !world.isClientSide())
+				StellarMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new SavedDataSyncMessage(0, this));
+		}
+
+		static MapVariables clientSide = new MapVariables();
+
+		public static MapVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevelAccessor serverLevelAcc) {
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e), MapVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class SavedDataSyncMessage {
+		private final int type;
+		private SavedData data;
+
+		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
+			this.type = buffer.readInt();
+			CompoundTag nbt = buffer.readNbt();
+			if (nbt != null) {
+				this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+				if (this.data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt);
+				else if (this.data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt);
+			}
+		}
+
+		public SavedDataSyncMessage(int type, SavedData data) {
+			this.type = type;
+			this.data = data;
+		}
+
+		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
+			buffer.writeInt(message.type);
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag()));
+		}
+
+		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+			NetworkEvent.Context context = contextSupplier.get();
+			context.enqueueWork(() -> {
+				if (!context.getDirection().getReceptionSide().isServer() && message.data != null) {
+					if (message.type == 0)
+						MapVariables.clientSide = (MapVariables) message.data;
+					else
+						WorldVariables.clientSide = (WorldVariables) message.data;
+				}
+			});
+			context.setPacketHandled(true);
 		}
 	}
 
@@ -106,6 +249,7 @@ public class StellarModVariables {
 	public static class PlayerVariables {
 		public double Role = 0;
 		public boolean Should_Hook = false;
+		public double damage = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -116,6 +260,7 @@ public class StellarModVariables {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putDouble("Role", Role);
 			nbt.putBoolean("Should_Hook", Should_Hook);
+			nbt.putDouble("damage", damage);
 			return nbt;
 		}
 
@@ -123,6 +268,7 @@ public class StellarModVariables {
 			CompoundTag nbt = (CompoundTag) Tag;
 			Role = nbt.getDouble("Role");
 			Should_Hook = nbt.getBoolean("Should_Hook");
+			damage = nbt.getDouble("damage");
 		}
 	}
 
@@ -149,6 +295,7 @@ public class StellarModVariables {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.Role = message.data.Role;
 					variables.Should_Hook = message.data.Should_Hook;
+					variables.damage = message.data.damage;
 				}
 			});
 			context.setPacketHandled(true);
