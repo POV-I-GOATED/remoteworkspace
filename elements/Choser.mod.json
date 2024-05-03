@@ -1,0 +1,71 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_speed",
+          "text": "Luck",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Button1"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 129,
+          "y": 52
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_strength",
+          "text": "Strength",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Button2"
+          },
+          "width": 67,
+          "height": 20,
+          "x": 230,
+          "y": 51
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_info",
+          "text": {
+            "fixedValue": "Info",
+            "name": "Textforboser"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 154,
+          "y": 78
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "ChoserThisGUIIsOpened"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
