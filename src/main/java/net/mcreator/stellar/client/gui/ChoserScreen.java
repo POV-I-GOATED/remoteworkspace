@@ -73,7 +73,7 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font,
 
-				TextforboserProcedure.execute(entity), 28, 41, -12829636, false);
+				TextforboserProcedure.execute(entity), 44, 40, -12829636, false);
 	}
 
 	@Override
