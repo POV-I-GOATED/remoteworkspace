@@ -31,6 +31,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.stellar.init.StellarModTabs;
 import net.mcreator.stellar.init.StellarModMobEffects;
+import net.mcreator.stellar.init.StellarModMenus;
 import net.mcreator.stellar.init.StellarModItems;
 import net.mcreator.stellar.init.StellarModEntities;
 import net.mcreator.stellar.init.StellarModBlocks;
@@ -62,6 +63,7 @@ public class StellarMod {
 
 		StellarModMobEffects.REGISTRY.register(bus);
 
+		StellarModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

@@ -31,6 +31,7 @@ public class StellarModTabs {
 				tabData.accept(StellarModItems.URANIUM.get());
 				tabData.accept(StellarModItems.URANUM_SWORD.get());
 				tabData.accept(StellarModItems.CROWN_HELMET.get());
+				tabData.accept(StellarModItems.BOXINGINCREAER.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
