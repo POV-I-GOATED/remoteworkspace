@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Max Luck",
+    "description": "max",
+    "category": "PLAYER",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 7
+  }
+}

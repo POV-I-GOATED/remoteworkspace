@@ -20,6 +20,7 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.stellar.network.StellarModVariables;
 import net.mcreator.stellar.init.StellarModItems;
+import net.mcreator.stellar.init.StellarModGameRules;
 
 import javax.annotation.Nullable;
 
@@ -64,7 +65,7 @@ public class DisablitysProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 10, 0));
 		}
 		if (5 == (entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role) {
-			Strengh = Mth.nextInt(RandomSource.create(), -2, (int) StellarModVariables.MapVariables.get(world).ChanceLuck);
+			Strengh = Mth.nextInt(RandomSource.create(), -2, (int) (entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).ChanceLuck);
 			if (Strengh == -1) {
 				{
 					double _setval = -1;
@@ -74,7 +75,7 @@ public class DisablitysProcedure {
 					});
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1, 1, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1, (world.getLevelData().getGameRules().getInt(StellarModGameRules.WEAKNESS)), false, false));
 			} else if (Strengh == -2) {
 				{
 					double _setval = -2;
@@ -84,7 +85,7 @@ public class DisablitysProcedure {
 					});
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1, 255, true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1, 255, false, false));
 			} else if (Strengh == 0) {
 				{
 					double _setval = 0;
@@ -110,7 +111,8 @@ public class DisablitysProcedure {
 					});
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, Mth.nextInt(RandomSource.create(), 0, (int) StellarModVariables.MapVariables.get(world).StrongLuck), true, true));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1,
+							Mth.nextInt(RandomSource.create(), 0, (int) (entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).StrongLuck), false, false));
 			}
 		}
 	}
