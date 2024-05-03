@@ -536,8 +536,8 @@
       "registry_name": "uranium",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/stellar/item/UraniumItem.java",
-          "src/main/resources/assets/stellar/models/item/uranium.json"
+          "src/main/resources/assets/stellar/models/item/uranium.json",
+          "src/main/java/net/mcreator/stellar/item/UraniumItem.java"
         ]
       }
     },

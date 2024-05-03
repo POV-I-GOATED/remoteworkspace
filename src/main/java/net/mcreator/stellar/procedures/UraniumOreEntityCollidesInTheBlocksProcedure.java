@@ -13,7 +13,7 @@ public class UraniumOreEntityCollidesInTheBlocksProcedure {
 			return;
 		if (!((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 4)) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(StellarModMobEffects.RADATION.get(), 100, 2, true, true));
+				_entity.addEffect(new MobEffectInstance(StellarModMobEffects.RADATION.get(), 20, 2, true, true));
 		}
 	}
 }
