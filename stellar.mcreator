@@ -989,6 +989,32 @@
           }
         ]
       }
+    },
+    {
+      "name": "Rerollers",
+      "type": "recipe",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rerollers",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/rerollers.json"
+        ]
+      }
+    },
+    {
+      "name": "BOxer",
+      "type": "recipe",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "b_oxer",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/b_oxer.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1021,6 +1047,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "2.0"
+    },
+    {
+      "name": "lasercoold",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
