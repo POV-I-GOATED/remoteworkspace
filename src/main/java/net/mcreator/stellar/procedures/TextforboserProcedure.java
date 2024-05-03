@@ -9,7 +9,7 @@ public class TextforboserProcedure {
 		if (entity == null)
 			return "";
 		String Texts = "";
-		return "Strong" + new java.text.DecimalFormat("##.##").format((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).StrongLuck) + " Luck"
+		return "Strong" + new java.text.DecimalFormat("##.##").format((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).StrongLuck) + " Luck "
 				+ new java.text.DecimalFormat("##.##").format((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).ChanceLuck - 2);
 	}
 }
