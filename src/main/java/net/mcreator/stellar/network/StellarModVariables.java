@@ -71,6 +71,7 @@ public class StellarModVariables {
 			clone.damage = original.damage;
 			clone.StrongLuck = original.StrongLuck;
 			clone.ChanceLuck = original.ChanceLuck;
+			clone.lasercoold = original.lasercoold;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -112,6 +113,7 @@ public class StellarModVariables {
 		public double damage = 0;
 		public double StrongLuck = 0.0;
 		public double ChanceLuck = 2.0;
+		public double lasercoold = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -125,6 +127,7 @@ public class StellarModVariables {
 			nbt.putDouble("damage", damage);
 			nbt.putDouble("StrongLuck", StrongLuck);
 			nbt.putDouble("ChanceLuck", ChanceLuck);
+			nbt.putDouble("lasercoold", lasercoold);
 			return nbt;
 		}
 
@@ -135,6 +138,7 @@ public class StellarModVariables {
 			damage = nbt.getDouble("damage");
 			StrongLuck = nbt.getDouble("StrongLuck");
 			ChanceLuck = nbt.getDouble("ChanceLuck");
+			lasercoold = nbt.getDouble("lasercoold");
 		}
 	}
 
@@ -164,6 +168,7 @@ public class StellarModVariables {
 					variables.damage = message.data.damage;
 					variables.StrongLuck = message.data.StrongLuck;
 					variables.ChanceLuck = message.data.ChanceLuck;
+					variables.lasercoold = message.data.lasercoold;
 				}
 			});
 			context.setPacketHandled(true);
