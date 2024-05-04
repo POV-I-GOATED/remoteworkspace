@@ -25,6 +25,8 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 	private final Player entity;
 	Button button_speed;
 	Button button_strength;
+	Button button_block;
+	Button button_reset;
 
 	public ChoserScreen(ChoserMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -73,7 +75,7 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font,
 
-				TextforboserProcedure.execute(entity), 44, 40, -12829636, false);
+				TextforboserProcedure.execute(entity), 2, 74, -12829636, false);
 	}
 
 	@Override
@@ -89,7 +91,7 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 				StellarMod.PACKET_HANDLER.sendToServer(new ChoserButtonMessage(0, x, y, z));
 				ChoserButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 21, this.topPos + 15, 51, 20).build();
+		}).bounds(this.leftPos + 10, this.topPos + 16, 51, 20).build();
 		guistate.put("button:button_speed", button_speed);
 		this.addRenderableWidget(button_speed);
 		button_strength = Button.builder(Component.translatable("gui.stellar.choser.button_strength"), e -> {
@@ -97,8 +99,24 @@ public class ChoserScreen extends AbstractContainerScreen<ChoserMenu> {
 				StellarMod.PACKET_HANDLER.sendToServer(new ChoserButtonMessage(1, x, y, z));
 				ChoserButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}).bounds(this.leftPos + 87, this.topPos + 15, 67, 20).build();
+		}).bounds(this.leftPos + 105, this.topPos + 16, 67, 20).build();
 		guistate.put("button:button_strength", button_strength);
 		this.addRenderableWidget(button_strength);
+		button_block = Button.builder(Component.translatable("gui.stellar.choser.button_block"), e -> {
+			if (true) {
+				StellarMod.PACKET_HANDLER.sendToServer(new ChoserButtonMessage(2, x, y, z));
+				ChoserButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}).bounds(this.leftPos + 58, this.topPos + 42, 51, 20).build();
+		guistate.put("button:button_block", button_block);
+		this.addRenderableWidget(button_block);
+		button_reset = Button.builder(Component.translatable("gui.stellar.choser.button_reset"), e -> {
+			if (true) {
+				StellarMod.PACKET_HANDLER.sendToServer(new ChoserButtonMessage(3, x, y, z));
+				ChoserButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}).bounds(this.leftPos + 58, this.topPos + 134, 51, 20).build();
+		guistate.put("button:button_reset", button_reset);
+		this.addRenderableWidget(button_reset);
 	}
 }

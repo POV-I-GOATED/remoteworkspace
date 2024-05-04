@@ -13,4 +13,5 @@ public class StellarModGameRules {
 	public static final GameRules.Key<GameRules.IntegerValue> MAX_SPEED = GameRules.register("maxSpeed", GameRules.Category.PLAYER, GameRules.IntegerValue.create(7));
 	public static final GameRules.Key<GameRules.IntegerValue> MAX_STRENGTH = GameRules.register("maxStrength", GameRules.Category.PLAYER, GameRules.IntegerValue.create(5));
 	public static final GameRules.Key<GameRules.IntegerValue> WEAKNESS = GameRules.register("weakness", GameRules.Category.PLAYER, GameRules.IntegerValue.create(1));
+	public static final GameRules.Key<GameRules.IntegerValue> BLOCKMAX = GameRules.register("blockmax", GameRules.Category.PLAYER, GameRules.IntegerValue.create(5));
 }

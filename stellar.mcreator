@@ -837,8 +837,16 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
           }
         ]
       }
@@ -1019,6 +1027,79 @@
           "src/main/resources/data/stellar/recipes/b_oxer.json"
         ]
       }
+    },
+    {
+      "name": "Button3",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "button_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/Button3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Blockmax",
+      "type": "gamerule",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blockmax",
+      "metadata": {
+        "files": [],
+        "type": "number"
+      }
+    },
+    {
+      "name": "LasershortyerOnKeyReleased",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lasershortyer_on_key_released",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/LasershortyerOnKeyReleasedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reset",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/ResetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1057,6 +1138,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "Blocks",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "holdingR",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "Blcks",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [],
@@ -1067,6 +1166,7 @@
       "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
       "gamerule.maxSpeed.description": "max",
       "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
+      "gamerule.blockmax": "Weakness",
       "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",
       "gui.stellar.choser.label_info": "Info",
       "item.stellar.crown_helmet": "Crown Helmet",
@@ -1075,6 +1175,7 @@
       "gamerule.maxStrength.description": "max",
       "item_group.stellar.stelllar": "Stellar",
       "item.stellar.boxingincreaer": "Boxing increaer",
+      "gui.stellar.choser.button_reset": "Reset",
       "gui.stellar.choser.button_strength": "Strength",
       "gui.stellar.choser.button_speed": "Luck",
       "entity.stellar.moverss": "Mover",
@@ -1089,6 +1190,8 @@
       "entity.stellar.knite": "Knight",
       "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
       "block.stellar.uranium_block": "Block of Uranium",
+      "gamerule.blockmax.description": "Weak",
+      "gui.stellar.choser.button_block": "Block",
       "gamerule.weakness": "Weakness",
       "key.stellar.lasershortyer": "R Click",
       "block.stellar.uranium_ore": "Uranium Ore",

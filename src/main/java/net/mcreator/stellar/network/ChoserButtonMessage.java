@@ -12,6 +12,8 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.stellar.world.inventory.ChoserMenu;
+import net.mcreator.stellar.procedures.ResetProcedure;
+import net.mcreator.stellar.procedures.Button3Procedure;
 import net.mcreator.stellar.procedures.Button2Procedure;
 import net.mcreator.stellar.procedures.Button1Procedure;
 import net.mcreator.stellar.StellarMod;
@@ -70,6 +72,14 @@ public class ChoserButtonMessage {
 		if (buttonID == 1) {
 
 			Button2Procedure.execute(world, entity);
+		}
+		if (buttonID == 2) {
+
+			Button3Procedure.execute(world, entity);
+		}
+		if (buttonID == 3) {
+
+			ResetProcedure.execute(entity);
 		}
 	}
 

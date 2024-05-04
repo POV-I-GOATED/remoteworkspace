@@ -15,6 +15,7 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
@@ -72,6 +73,9 @@ public class StellarModVariables {
 			clone.StrongLuck = original.StrongLuck;
 			clone.ChanceLuck = original.ChanceLuck;
 			clone.lasercoold = original.lasercoold;
+			clone.Blocks = original.Blocks;
+			clone.holdingR = original.holdingR;
+			clone.Blcks = original.Blcks;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -114,6 +118,9 @@ public class StellarModVariables {
 		public double StrongLuck = 0.0;
 		public double ChanceLuck = 2.0;
 		public double lasercoold = 0;
+		public double Blocks = 1.0;
+		public double holdingR = 0.0;
+		public boolean Blcks = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -128,6 +135,9 @@ public class StellarModVariables {
 			nbt.putDouble("StrongLuck", StrongLuck);
 			nbt.putDouble("ChanceLuck", ChanceLuck);
 			nbt.putDouble("lasercoold", lasercoold);
+			nbt.putDouble("Blocks", Blocks);
+			nbt.putDouble("holdingR", holdingR);
+			nbt.putBoolean("Blcks", Blcks);
 			return nbt;
 		}
 
@@ -139,6 +149,9 @@ public class StellarModVariables {
 			StrongLuck = nbt.getDouble("StrongLuck");
 			ChanceLuck = nbt.getDouble("ChanceLuck");
 			lasercoold = nbt.getDouble("lasercoold");
+			Blocks = nbt.getDouble("Blocks");
+			holdingR = nbt.getDouble("holdingR");
+			Blcks = nbt.getBoolean("Blcks");
 		}
 	}
 
@@ -169,6 +182,9 @@ public class StellarModVariables {
 					variables.StrongLuck = message.data.StrongLuck;
 					variables.ChanceLuck = message.data.ChanceLuck;
 					variables.lasercoold = message.data.lasercoold;
+					variables.Blocks = message.data.Blocks;
+					variables.holdingR = message.data.holdingR;
+					variables.Blcks = message.data.Blcks;
 				}
 			});
 			context.setPacketHandled(true);

@@ -21,8 +21,8 @@
           },
           "width": 51,
           "height": 20,
-          "x": 147,
-          "y": 52
+          "x": 136,
+          "y": 53
         }
       },
       {
@@ -36,8 +36,8 @@
           },
           "width": 67,
           "height": 20,
-          "x": 213,
-          "y": 52
+          "x": 231,
+          "y": 53
         }
       },
       {
@@ -52,8 +52,38 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 170,
-          "y": 77
+          "x": 128,
+          "y": 111
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_block",
+          "text": "Block",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Button3"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 184,
+          "y": 79
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_reset",
+          "text": "Reset",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Reset"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 184,
+          "y": 171
         }
       }
     ],

@@ -43,10 +43,16 @@ public class StellarModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				StellarMod.PACKET_HANDLER.sendToServer(new LasershortyerMessage(0, 0));
 				LasershortyerMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+				LASERSHORTYER_LASTPRESS = System.currentTimeMillis();
+			} else if (isDownOld != isDown && !isDown) {
+				int dt = (int) (System.currentTimeMillis() - LASERSHORTYER_LASTPRESS);
+				StellarMod.PACKET_HANDLER.sendToServer(new LasershortyerMessage(1, dt));
+				LasershortyerMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
 		}
 	};
+	private static long LASERSHORTYER_LASTPRESS = 0;
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {

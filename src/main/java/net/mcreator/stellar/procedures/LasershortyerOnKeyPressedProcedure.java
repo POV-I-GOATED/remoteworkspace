@@ -59,5 +59,14 @@ public class LasershortyerOnKeyPressedProcedure {
 					_player.displayClientMessage(Component.literal("Cooldown"), true);
 			}
 		}
+		if ((entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role == 5) {
+			{
+				boolean _setval = true;
+				entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.Blcks = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 	}
 }

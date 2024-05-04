@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.stellar.procedures.LasershortyerOnKeyReleasedProcedure;
 import net.mcreator.stellar.procedures.LasershortyerOnKeyPressedProcedure;
 import net.mcreator.stellar.StellarMod;
 
@@ -53,6 +54,10 @@ public class LasershortyerMessage {
 		if (type == 0) {
 
 			LasershortyerOnKeyPressedProcedure.execute(world, entity);
+		}
+		if (type == 1) {
+
+			LasershortyerOnKeyReleasedProcedure.execute(entity);
 		}
 	}
 
