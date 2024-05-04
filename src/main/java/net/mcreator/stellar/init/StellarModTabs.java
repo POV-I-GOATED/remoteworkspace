@@ -32,6 +32,10 @@ public class StellarModTabs {
 				tabData.accept(StellarModItems.URANUM_SWORD.get());
 				tabData.accept(StellarModItems.CROWN_HELMET.get());
 				tabData.accept(StellarModItems.BOXINGINCREAER.get());
+				tabData.accept(StellarModItems.URANIUMA_HELMET.get());
+				tabData.accept(StellarModItems.URANIUMA_CHESTPLATE.get());
+				tabData.accept(StellarModItems.URANIUMA_LEGGINGS.get());
+				tabData.accept(StellarModItems.URANIUMA_BOOTS.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent

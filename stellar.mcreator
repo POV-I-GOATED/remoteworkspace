@@ -1100,6 +1100,75 @@
           }
         ]
       }
+    },
+    {
+      "name": "Uraniuma",
+      "type": "armor",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uraniuma",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/item/UraniumaItem.java",
+          "src/main/resources/assets/stellar/models/item/uraniuma_chestplate.json",
+          "src/main/resources/assets/stellar/models/item/uraniuma_leggings.json",
+          "src/main/resources/assets/stellar/models/item/uraniuma_boots.json",
+          "src/main/resources/assets/stellar/models/item/uraniuma_helmet.json"
+        ]
+      }
+    },
+    {
+      "name": "A",
+      "type": "recipe",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/a.json"
+        ]
+      }
+    },
+    {
+      "name": "B",
+      "type": "recipe",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "b",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/b.json"
+        ]
+      }
+    },
+    {
+      "name": "C",
+      "type": "recipe",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/c.json"
+        ]
+      }
+    },
+    {
+      "name": "D",
+      "type": "recipe",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "d",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/d.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1161,6 +1230,8 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.stellar.uraniuma_chestplate": "Uranium Chestplate",
+      "item.stellar.uraniuma_boots": "Uranium Boots",
       "effect.stellar.radation": "Radation",
       "gamerule.weakness.description": "Weak",
       "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
@@ -1176,6 +1247,7 @@
       "item_group.stellar.stelllar": "Stellar",
       "item.stellar.boxingincreaer": "Boxing increaer",
       "gui.stellar.choser.button_reset": "Reset",
+      "item.stellar.uraniuma_helmet": "Uranium Helmet",
       "gui.stellar.choser.button_strength": "Strength",
       "gui.stellar.choser.button_speed": "Luck",
       "entity.stellar.moverss": "Mover",
@@ -1187,6 +1259,7 @@
       "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
       "key.stellar.r_click": "R Click",
       "item.stellar.uranum_sword": "Uranum Sword",
+      "item.stellar.uraniuma_leggings": "Uranium Leggings",
       "entity.stellar.knite": "Knight",
       "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
       "block.stellar.uranium_block": "Block of Uranium",

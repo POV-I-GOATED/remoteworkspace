@@ -42,6 +42,7 @@ public class DisablitysProcedure {
 		if (entity == null)
 			return;
 		double Strengh = 0;
+		Entity playerr = null;
 		if (1 == (entity.getCapability(StellarModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new StellarModVariables.PlayerVariables())).Role) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 0));
