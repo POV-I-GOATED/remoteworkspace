@@ -1,0 +1,7 @@
+
+{
+  "parent": "stellar:displaysettings/gate.item",
+  "textures": {
+    "particle": "stellar:block/boxing"
+  }
+}

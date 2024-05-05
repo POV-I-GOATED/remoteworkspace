@@ -21,6 +21,9 @@ import net.mcreator.stellar.item.RerollerItem;
 import net.mcreator.stellar.item.HooksItem;
 import net.mcreator.stellar.item.CrownItem;
 import net.mcreator.stellar.item.BoxingincreaerItem;
+import net.mcreator.stellar.block.display.GateDisplayItem;
+import net.mcreator.stellar.block.display.BoxingRingLineDisplayItem;
+import net.mcreator.stellar.block.display.BoxingRingConerDisplayItem;
 import net.mcreator.stellar.StellarMod;
 
 public class StellarModItems {
@@ -39,6 +42,9 @@ public class StellarModItems {
 	public static final RegistryObject<Item> URANIUMA_CHESTPLATE = REGISTRY.register("uraniuma_chestplate", () -> new UraniumaItem.Chestplate());
 	public static final RegistryObject<Item> URANIUMA_LEGGINGS = REGISTRY.register("uraniuma_leggings", () -> new UraniumaItem.Leggings());
 	public static final RegistryObject<Item> URANIUMA_BOOTS = REGISTRY.register("uraniuma_boots", () -> new UraniumaItem.Boots());
+	public static final RegistryObject<Item> BOXING_RING_LINE = REGISTRY.register(StellarModBlocks.BOXING_RING_LINE.getId().getPath(), () -> new BoxingRingLineDisplayItem(StellarModBlocks.BOXING_RING_LINE.get(), new Item.Properties()));
+	public static final RegistryObject<Item> BOXING_RING_CONER = REGISTRY.register(StellarModBlocks.BOXING_RING_CONER.getId().getPath(), () -> new BoxingRingConerDisplayItem(StellarModBlocks.BOXING_RING_CONER.get(), new Item.Properties()));
+	public static final RegistryObject<Item> GATE = REGISTRY.register(StellarModBlocks.GATE.getId().getPath(), () -> new GateDisplayItem(StellarModBlocks.GATE.get(), new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

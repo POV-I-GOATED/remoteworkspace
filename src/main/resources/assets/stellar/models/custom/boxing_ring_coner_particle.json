@@ -1,0 +1,7 @@
+
+{
+  "parent": "stellar:displaysettings/corn.item",
+  "textures": {
+    "particle": "stellar:block/boxing"
+  }
+}

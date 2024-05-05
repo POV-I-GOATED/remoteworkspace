@@ -36,6 +36,9 @@ public class StellarModTabs {
 				tabData.accept(StellarModItems.URANIUMA_CHESTPLATE.get());
 				tabData.accept(StellarModItems.URANIUMA_LEGGINGS.get());
 				tabData.accept(StellarModItems.URANIUMA_BOOTS.get());
+				tabData.accept(StellarModBlocks.BOXING_RING_LINE.get().asItem());
+				tabData.accept(StellarModBlocks.BOXING_RING_CONER.get().asItem());
+				tabData.accept(StellarModBlocks.GATE.get().asItem());
 			}).withSearchBar().build());
 
 	@SubscribeEvent

@@ -1169,6 +1169,103 @@
           "src/main/resources/data/stellar/recipes/d.json"
         ]
       }
+    },
+    {
+      "name": "BoxingRingLine",
+      "type": "animatedblock",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boxing_ring_line",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/stellar/models/custom/boxing_ring_line_particle.json",
+          "src/main/java/net/mcreator/stellar/block/entity/BoxingRingLineTileEntity.java",
+          "src/main/resources/assets/stellar/blockstates/boxing_ring_line.json",
+          "src/main/resources/assets/stellar/models/item/boxing_ring_line.json",
+          "src/main/java/net/mcreator/stellar/block/model/BoxingRingLineDisplayModel.java",
+          "src/main/java/net/mcreator/stellar/block/display/BoxingRingLineDisplayItem.java",
+          "src/main/java/net/mcreator/stellar/block/model/BoxingRingLineBlockModel.java",
+          "src/main/java/net/mcreator/stellar/block/renderer/BoxingRingLineDisplayItemRenderer.java",
+          "src/main/java/net/mcreator/stellar/block/BoxingRingLineBlock.java",
+          "src/main/java/net/mcreator/stellar/block/renderer/BoxingRingLineTileRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "BoxingRingConer",
+      "type": "animatedblock",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boxing_ring_coner",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/block/entity/BoxingRingConerTileEntity.java",
+          "src/main/java/net/mcreator/stellar/block/model/BoxingRingConerBlockModel.java",
+          "src/main/java/net/mcreator/stellar/block/BoxingRingConerBlock.java",
+          "src/main/java/net/mcreator/stellar/block/model/BoxingRingConerDisplayModel.java",
+          "src/main/java/net/mcreator/stellar/block/display/BoxingRingConerDisplayItem.java",
+          "src/main/resources/assets/stellar/models/item/boxing_ring_coner.json",
+          "src/main/java/net/mcreator/stellar/block/renderer/BoxingRingConerTileRenderer.java",
+          "src/main/resources/assets/stellar/blockstates/boxing_ring_coner.json",
+          "src/main/java/net/mcreator/stellar/block/renderer/BoxingRingConerDisplayItemRenderer.java",
+          "src/main/resources/assets/stellar/models/custom/boxing_ring_coner_particle.json"
+        ]
+      }
+    },
+    {
+      "name": "GateOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gate_on_block_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/GateOnBlockRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gate",
+      "type": "animatedblock",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gate",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/stellar/blockstates/gate.json",
+          "src/main/java/net/mcreator/stellar/block/renderer/GateTileRenderer.java",
+          "src/main/resources/assets/stellar/models/item/gate.json",
+          "src/main/java/net/mcreator/stellar/block/GateBlock.java",
+          "src/main/java/net/mcreator/stellar/block/entity/GateTileEntity.java",
+          "src/main/resources/assets/stellar/models/custom/gate_particle.json",
+          "src/main/java/net/mcreator/stellar/block/model/GateDisplayModel.java",
+          "src/main/java/net/mcreator/stellar/block/model/GateBlockModel.java",
+          "src/main/java/net/mcreator/stellar/block/renderer/GateDisplayItemRenderer.java",
+          "src/main/java/net/mcreator/stellar/block/display/GateDisplayItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1231,6 +1328,7 @@
   "language_map": {
     "en_us": {
       "item.stellar.uraniuma_chestplate": "Uranium Chestplate",
+      "block.stellar.boxing_ring_line": "Boxing Ring Line",
       "item.stellar.uraniuma_boots": "Uranium Boots",
       "effect.stellar.radation": "Radation",
       "gamerule.weakness.description": "Weak",
@@ -1244,6 +1342,7 @@
       "death.attack.radation_posion": "%1$s died by radation posion",
       "item.stellar.summoner": "Summoner",
       "gamerule.maxStrength.description": "max",
+      "block.stellar.gate": "Gate",
       "item_group.stellar.stelllar": "Stellar",
       "item.stellar.boxingincreaer": "Boxing increaer",
       "gui.stellar.choser.button_reset": "Reset",
@@ -1261,6 +1360,7 @@
       "item.stellar.uranum_sword": "Uranum Sword",
       "item.stellar.uraniuma_leggings": "Uranium Leggings",
       "entity.stellar.knite": "Knight",
+      "block.stellar.boxing_ring_coner": "Boxing Ring Coner",
       "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
       "block.stellar.uranium_block": "Block of Uranium",
       "gamerule.blockmax.description": "Weak",

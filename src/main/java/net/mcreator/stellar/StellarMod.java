@@ -35,6 +35,7 @@ import net.mcreator.stellar.init.StellarModMenus;
 import net.mcreator.stellar.init.StellarModItems;
 import net.mcreator.stellar.init.StellarModEntities;
 import net.mcreator.stellar.init.StellarModBlocks;
+import net.mcreator.stellar.init.StellarModBlockEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -55,7 +56,7 @@ public class StellarMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		StellarModBlocks.REGISTRY.register(bus);
-
+		StellarModBlockEntities.REGISTRY.register(bus);
 		StellarModItems.REGISTRY.register(bus);
 		StellarModEntities.REGISTRY.register(bus);
 

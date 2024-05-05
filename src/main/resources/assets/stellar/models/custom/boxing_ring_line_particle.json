@@ -1,0 +1,7 @@
+
+{
+  "parent": "stellar:displaysettings/box.item",
+  "textures": {
+    "particle": "stellar:block/boxing"
+  }
+}

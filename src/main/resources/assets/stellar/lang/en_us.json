@@ -1,5 +1,6 @@
 {
   "item.stellar.uraniuma_chestplate": "Uranium Chestplate",
+  "block.stellar.boxing_ring_line": "Boxing Ring Line",
   "item.stellar.uraniuma_boots": "Uranium Boots",
   "effect.stellar.radation": "Radation",
   "gamerule.weakness.description": "Weak",
@@ -13,6 +14,7 @@
   "death.attack.radation_posion": "%1$s died by radation posion",
   "item.stellar.summoner": "Summoner",
   "gamerule.maxStrength.description": "max",
+  "block.stellar.gate": "Gate",
   "item_group.stellar.stelllar": "Stellar",
   "item.stellar.boxingincreaer": "Boxing increaer",
   "gui.stellar.choser.button_reset": "Reset",
@@ -30,6 +32,7 @@
   "item.stellar.uranum_sword": "Uranum Sword",
   "item.stellar.uraniuma_leggings": "Uranium Leggings",
   "entity.stellar.knite": "Knight",
+  "block.stellar.boxing_ring_coner": "Boxing Ring Coner",
   "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
   "block.stellar.uranium_block": "Block of Uranium",
   "gamerule.blockmax.description": "Weak",

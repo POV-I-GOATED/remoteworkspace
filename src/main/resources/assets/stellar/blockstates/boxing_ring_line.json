@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "stellar:custom/boxing_ring_line_particle"
+    },
+    "facing=east": {
+      "model": "stellar:custom/boxing_ring_line_particle",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "stellar:custom/boxing_ring_line_particle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "stellar:custom/boxing_ring_line_particle",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "stellar:custom/boxing_ring_line_particle",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "stellar:custom/boxing_ring_line_particle",
+      "x": 90
+    }
+  }
+}
