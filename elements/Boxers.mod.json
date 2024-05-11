@@ -2,24 +2,26 @@
   "_fv": 57,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Knight",
+    "mobName": "Boxer",
     "mobLabel": "",
-    "mobModelTexture": "minecraft_village_14x48x26.png",
+    "mobModelTexture": "box.png",
     "mobModelGlowTexture": "",
     "visualScale": {
-      "fixedValue": 3.0
+      "fixedValue": 3.0,
+      "name": "Size"
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "S"
     },
     "entityDataEntries": [],
     "modelWidth": 0.6,
-    "modelHeight": 1.8,
+    "modelHeight": 1.0,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -256,
+      "value": -65536,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
@@ -29,8 +31,8 @@
     "creativeTab": {
       "value": "MISC"
     },
-    "isBoss": false,
-    "bossBarColor": "PINK",
+    "isBoss": true,
+    "bossBarColor": "RED",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
       "value": ""
@@ -52,14 +54,14 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 5,
+    "attackStrength": 3,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 20,
+    "health": 300,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
@@ -80,13 +82,13 @@
     "immuneToLightning": false,
     "immuneToPotions": false,
     "immuneToPlayer": false,
-    "immuneToExplosion": true,
+    "immuneToExplosion": false,
     "immuneToTrident": false,
     "immuneToAnvil": false,
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": ""
+      "value": "CUSTOM:Boxingincreaer"
     },
     "livingSound": {
       "value": ""
@@ -101,34 +103,34 @@
       "value": ""
     },
     "onMobTickUpdate": {
-      "name": "KniteOnEntityTickUpdate"
+      "name": "BoxersOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block><block type=\"attack_with_range\" x=\"203\" y=\"218\"><field name=\"range\">2</field><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field></block></xml>",
-    "model": "knight.geo.json",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"></block></xml>",
+    "model": "box.geo.json",
     "groupName": "",
     "animation1": "idle",
-    "animation2": "",
+    "animation2": "Walk",
     "animation3": "",
-    "animation4": "attack",
+    "animation4": "",
     "animation5": "",
     "animation6": "",
     "animation7": "",
     "animation8": "",
     "animation9": "",
     "animation10": "",
-    "enable2": false,
+    "enable2": true,
     "enable3": false,
-    "enable4": true,
+    "enable4": false,
     "enable5": false,
     "enable6": false,
     "enable7": false,
     "enable8": false,
     "enable9": false,
     "enable10": false,
-    "breedable": true,
-    "tameable": true,
+    "breedable": false,
+    "tameable": false,
     "disableDeathRotation": false,
     "headMovement": false,
     "eyeHeight": false,
@@ -142,7 +144,7 @@
     "rangedAttackRadius": 10.0,
     "height": 1.0,
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": true,
+    "doesDespawnWhenIdle": false,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

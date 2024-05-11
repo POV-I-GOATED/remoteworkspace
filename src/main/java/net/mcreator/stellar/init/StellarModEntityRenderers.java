@@ -14,6 +14,7 @@ import net.mcreator.stellar.client.renderer.MoverssRenderer;
 import net.mcreator.stellar.client.renderer.MoverRenderer;
 import net.mcreator.stellar.client.renderer.LaserRenderer;
 import net.mcreator.stellar.client.renderer.KniteRenderer;
+import net.mcreator.stellar.client.renderer.BoxersRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class StellarModEntityRenderers {
@@ -24,5 +25,6 @@ public class StellarModEntityRenderers {
 		event.registerEntityRenderer(StellarModEntities.MOVERSS.get(), MoverssRenderer::new);
 		event.registerEntityRenderer(StellarModEntities.KNITE.get(), KniteRenderer::new);
 		event.registerEntityRenderer(StellarModEntities.LASER.get(), LaserRenderer::new);
+		event.registerEntityRenderer(StellarModEntities.BOXERS.get(), BoxersRenderer::new);
 	}
 }

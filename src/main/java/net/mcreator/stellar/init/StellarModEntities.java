@@ -21,6 +21,7 @@ import net.mcreator.stellar.entity.MoverssEntity;
 import net.mcreator.stellar.entity.MoverEntity;
 import net.mcreator.stellar.entity.LaserEntity;
 import net.mcreator.stellar.entity.KniteEntity;
+import net.mcreator.stellar.entity.BoxersEntity;
 import net.mcreator.stellar.StellarMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -38,6 +39,10 @@ public class StellarModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<LaserEntity>> LASER = register("projectile_laser",
 			EntityType.Builder.<LaserEntity>of(LaserEntity::new, MobCategory.MISC).setCustomClientFactory(LaserEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<BoxersEntity>> BOXERS = register("boxers",
+			EntityType.Builder.<BoxersEntity>of(BoxersEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BoxersEntity::new)
+
+					.sized(0.6f, 1f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -49,6 +54,7 @@ public class StellarModEntities {
 			MoverEntity.init();
 			MoverssEntity.init();
 			KniteEntity.init();
+			BoxersEntity.init();
 		});
 	}
 
@@ -57,5 +63,6 @@ public class StellarModEntities {
 		event.put(MOVER.get(), MoverEntity.createAttributes().build());
 		event.put(MOVERSS.get(), MoverssEntity.createAttributes().build());
 		event.put(KNITE.get(), KniteEntity.createAttributes().build());
+		event.put(BOXERS.get(), BoxersEntity.createAttributes().build());
 	}
 }

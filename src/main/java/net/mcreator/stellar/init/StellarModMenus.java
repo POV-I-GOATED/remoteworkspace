@@ -11,10 +11,12 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
 
+import net.mcreator.stellar.world.inventory.LocatorMenu;
 import net.mcreator.stellar.world.inventory.ChoserMenu;
 import net.mcreator.stellar.StellarMod;
 
 public class StellarModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, StellarMod.MODID);
 	public static final RegistryObject<MenuType<ChoserMenu>> CHOSER = REGISTRY.register("choser", () -> IForgeMenuType.create(ChoserMenu::new));
+	public static final RegistryObject<MenuType<LocatorMenu>> LOCATOR = REGISTRY.register("locator", () -> IForgeMenuType.create(LocatorMenu::new));
 }

@@ -18,6 +18,7 @@ import net.mcreator.stellar.item.UraniumaItem;
 import net.mcreator.stellar.item.UraniumItem;
 import net.mcreator.stellar.item.SummonerItem;
 import net.mcreator.stellar.item.RerollerItem;
+import net.mcreator.stellar.item.LOcatrItem;
 import net.mcreator.stellar.item.HooksItem;
 import net.mcreator.stellar.item.CrownItem;
 import net.mcreator.stellar.item.BoxingincreaerItem;
@@ -39,6 +40,8 @@ public class StellarModItems {
 	public static final RegistryObject<Item> URANIUMA_CHESTPLATE = REGISTRY.register("uraniuma_chestplate", () -> new UraniumaItem.Chestplate());
 	public static final RegistryObject<Item> URANIUMA_LEGGINGS = REGISTRY.register("uraniuma_leggings", () -> new UraniumaItem.Leggings());
 	public static final RegistryObject<Item> URANIUMA_BOOTS = REGISTRY.register("uraniuma_boots", () -> new UraniumaItem.Boots());
+	public static final RegistryObject<Item> BOXERS_SPAWN_EGG = REGISTRY.register("boxers_spawn_egg", () -> new ForgeSpawnEggItem(StellarModEntities.BOXERS, -65536, -26368, new Item.Properties()));
+	public static final RegistryObject<Item> L_OCATR = REGISTRY.register("l_ocatr", () -> new LOcatrItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

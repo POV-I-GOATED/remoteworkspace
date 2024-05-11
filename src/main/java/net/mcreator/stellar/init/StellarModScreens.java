@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import net.mcreator.stellar.client.gui.LocatorScreen;
 import net.mcreator.stellar.client.gui.ChoserScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -19,6 +20,7 @@ public class StellarModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(StellarModMenus.CHOSER.get(), ChoserScreen::new);
+			MenuScreens.register(StellarModMenus.LOCATOR.get(), LocatorScreen::new);
 		});
 	}
 }

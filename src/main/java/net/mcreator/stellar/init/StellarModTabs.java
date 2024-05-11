@@ -36,6 +36,7 @@ public class StellarModTabs {
 				tabData.accept(StellarModItems.URANIUMA_CHESTPLATE.get());
 				tabData.accept(StellarModItems.URANIUMA_LEGGINGS.get());
 				tabData.accept(StellarModItems.URANIUMA_BOOTS.get());
+				tabData.accept(StellarModItems.L_OCATR.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
@@ -43,6 +44,7 @@ public class StellarModTabs {
 
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(StellarModItems.KNITE_SPAWN_EGG.get());
+			tabData.accept(StellarModItems.BOXERS_SPAWN_EGG.get());
 		}
 	}
 }

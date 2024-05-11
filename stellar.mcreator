@@ -435,7 +435,6 @@
       "registry_name": "knite",
       "metadata": {
         "files": [
-          "src/main/resources/data/stellar/forge/biome_modifier/knite_biome_modifier.json",
           "src/main/java/net/mcreator/stellar/entity/KniteEntity.java",
           "src/main/java/net/mcreator/stellar/client/renderer/KniteRenderer.java",
           "src/main/java/net/mcreator/stellar/entity/model/KniteModel.java",
@@ -818,6 +817,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -1169,6 +1180,330 @@
           "src/main/resources/data/stellar/recipes/d.json"
         ]
       }
+    },
+    {
+      "name": "Boxers",
+      "type": "animatedentity",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boxers",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/stellar/models/item/boxers_spawn_egg.json",
+          "src/main/java/net/mcreator/stellar/entity/model/BoxersModel.java",
+          "src/main/java/net/mcreator/stellar/client/renderer/BoxersRenderer.java",
+          "src/main/java/net/mcreator/stellar/entity/BoxersEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "BoxersOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boxers_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/BoxersOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Size",
+      "type": "procedure",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "size",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/SizeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "S",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "s",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/SProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Locator",
+      "type": "gui",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "locator",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/world/inventory/LocatorMenu.java",
+          "src/main/java/net/mcreator/stellar/client/gui/LocatorScreen.java",
+          "src/main/java/net/mcreator/stellar/network/LocatorButtonMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "Playerbuttonhit",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "playerbuttonhit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/PlayerbuttonhitProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Villbuttonhit",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "villbuttonhit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/VillbuttonhitProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SHows",
+      "type": "procedure",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "s_hows",
+      "metadata": {
+        "return_type": "entity",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/SHowsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LOcatr",
+      "type": "item",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "l_ocatr",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/stellar/models/item/l_ocatr.json",
+          "src/main/java/net/mcreator/stellar/item/LOcatrItem.java",
+          "src/main/java/net/mcreator/stellar/item/inventory/LOcatrInventoryCapability.java"
+        ]
+      }
+    },
+    {
+      "name": "X",
+      "type": "procedure",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "x",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/XProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Y",
+      "type": "procedure",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "y",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/YProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Z",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "z",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/ZProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Items",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "items",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/ItemsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Name",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/stellar/procedures/NameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lo",
+      "type": "recipe",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/recipes/lo.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1234,6 +1569,7 @@
       "item.stellar.uraniuma_boots": "Uranium Boots",
       "effect.stellar.radation": "Radation",
       "gamerule.weakness.description": "Weak",
+      "item.stellar.boxers_spawn_egg": "Boxer Spawn Egg",
       "item.stellar.mover_spawn_egg": "Mover Spawn Egg",
       "gamerule.maxSpeed.description": "max",
       "death.attack.radation_posion.item": "%1$s was killed by %2$s using %3$s due to radation posion",
@@ -1241,6 +1577,7 @@
       "death.attack.radation_posion.player": "%1$s died whilst trying to escape %2$s  due to radation posion",
       "gui.stellar.choser.label_info": "Info",
       "item.stellar.crown_helmet": "Crown Helmet",
+      "gui.stellar.locator.button_player": "Player",
       "death.attack.radation_posion": "%1$s died by radation posion",
       "item.stellar.summoner": "Summoner",
       "gamerule.maxStrength.description": "max",
@@ -1251,12 +1588,15 @@
       "gui.stellar.choser.button_strength": "Strength",
       "gui.stellar.choser.button_speed": "Luck",
       "entity.stellar.moverss": "Mover",
+      "item.stellar.l_ocatr": "Locator",
       "entity.stellar.mover": "Mover",
       "item.stellar.reroller": "Reroller",
       "gamerule.maxStrength": "Max Strength",
       "item.stellar.uranium": "Uranium",
+      "gui.stellar.locator.button_villager": "Villager",
       "item.stellar.hooks": "Hooks",
       "item.stellar.moverss_spawn_egg": "Mover Spawn Egg",
+      "entity.stellar.boxers": "Boxer",
       "key.stellar.r_click": "R Click",
       "item.stellar.uranum_sword": "Uranum Sword",
       "item.stellar.uraniuma_leggings": "Uranium Leggings",

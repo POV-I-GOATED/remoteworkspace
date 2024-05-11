@@ -1,0 +1,145 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 1000,
+    "inventoryOffsetY": 1,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_player",
+          "text": "Player",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Villbuttonhit"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 133,
+          "y": 4
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_villager",
+          "text": "Villager",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Playerbuttonhit"
+          },
+          "width": 67,
+          "height": 20,
+          "x": 244,
+          "y": 6
+        }
+      },
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "SHows"
+          },
+          "scale": 75,
+          "rotationX": 0,
+          "followMouseMovement": true,
+          "x": 343,
+          "y": 199
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_x",
+          "text": {
+            "fixedValue": "",
+            "name": "X"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 24,
+          "y": 40
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_y",
+          "text": {
+            "fixedValue": "",
+            "name": "Y"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 26,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_z",
+          "text": {
+            "fixedValue": "",
+            "name": "Z"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 118
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_items",
+          "text": {
+            "fixedValue": "",
+            "name": "Items"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 26,
+          "y": 162
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Name"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 28,
+          "y": 210
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
