@@ -1504,6 +1504,19 @@
           "src/main/resources/data/stellar/recipes/lo.json"
         ]
       }
+    },
+    {
+      "name": "Hurt",
+      "type": "damagetype",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hurt",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/stellar/damage_type/hurt.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1567,6 +1580,7 @@
     "en_us": {
       "item.stellar.uraniuma_chestplate": "Uranium Chestplate",
       "item.stellar.uraniuma_boots": "Uranium Boots",
+      "death.attack.hurt.item": "%1$s was killed by boxer ",
       "effect.stellar.radation": "Radation",
       "gamerule.weakness.description": "Weak",
       "item.stellar.boxers_spawn_egg": "Boxer Spawn Egg",
@@ -1603,6 +1617,8 @@
       "entity.stellar.knite": "Knight",
       "item.stellar.knite_spawn_egg": "Knight Spawn Egg",
       "block.stellar.uranium_block": "Block of Uranium",
+      "death.attack.hurt": "%1$s died to Boxer",
+      "death.attack.hurt.player": "%1$s died whilst trying to escape boxer hahaha L",
       "gamerule.blockmax.description": "Weak",
       "gui.stellar.choser.button_block": "Block",
       "gamerule.weakness": "Weakness",
